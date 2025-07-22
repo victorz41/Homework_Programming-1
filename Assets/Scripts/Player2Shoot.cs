@@ -1,7 +1,6 @@
-
 using UnityEngine;
 
-public class PlayerShoot : MonoBehaviour
+public class Player2Shoot : MonoBehaviour
     {
         public GameObject preFab;
         public Transform bulletTrash; 
@@ -15,13 +14,12 @@ public class PlayerShoot : MonoBehaviour
     {
         TimerMethod();
             
-        if (Input.GetKeyDown(KeyCode.Mouse0) && _canShoot)
+        if (Input.GetKeyDown(KeyCode.Mouse1) && _canShoot)
         {
-        GameObject bullet = Instantiate(preFab, bulletSpawn.position, Quaternion.identity);
-        bullet.transform.SetParent(bulletTrash);
+        GameObject bullet2 = Instantiate(preFab, bulletSpawn.position, Quaternion.identity);
+        bullet2.transform.SetParent(bulletTrash);
         _canShoot = false;
         }
-
     }
 
     
@@ -41,10 +39,10 @@ private void TimerMethod()
 
 private void Shoot()
     {
-    if (Input.GetKeyDown(KeyCode.Mouse0) && _canShoot)
+    if (Input.GetKeyDown(KeyCode.Mouse1) && _canShoot)
     {
-        GameObject bullet = Instantiate(preFab, bulletSpawn.position, Quaternion.identity);
-        bullet.transform.SetParent(bulletTrash);
+        GameObject bullet2 = Instantiate(preFab, bulletSpawn.position, Quaternion.identity);
+        bullet2.transform.SetParent(bulletTrash);
 
         _canShoot = false;
         }
